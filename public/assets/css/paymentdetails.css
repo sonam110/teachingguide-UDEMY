@@ -1,0 +1,43 @@
+#PaymentDetails-main{
+display:none;
+	float:left;
+	padding-top:200px;
+}
+
+#PaymentDetails-div {
+	background-color:rgba(72,72,72,0.4);
+	padding-left:35px;
+	padding-right:35px;
+	padding-top:35px;
+	padding-bottom:50px;
+	width: 750px;
+	float: left;
+	left: 50%;
+	position: absolute;
+  margin-top:30px;
+	margin-left: -260px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+}
+
+
+@media only screen and (max-width: 580px) {
+	#PaymentDetails-div{
+		left: 3%;
+		margin-right: 3%;
+		width: 88%;
+		margin-left: 0;
+		padding-left: 3%;
+		padding-right: 3%;
+	}
+}
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+  display: block; /* For Firefox */
+}
+
+/* */
+
+div[contenteditable=true] {
+  padding: 5px;
+}

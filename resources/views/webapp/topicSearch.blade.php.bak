@@ -1,0 +1,552 @@
+@extends('layouts.webapp')
+
+@section('css')
+<link href="{{ asset('assets/css/plugins/chosen/bootstrap-chosen.css?v=123')}}" rel="stylesheet">
+<link href="{{ asset('assets/css/plugins/datapicker/datepicker3.css')}}" rel="stylesheet">
+<link href="{{ asset('assets/css/plugins/ionRangeSlider/ion.rangeSlider.css')}}" rel="stylesheet">
+<link href="{{ asset('assets/css/plugins/nouslider/jquery.nouislider.css')}}" rel="stylesheet">
+<link href="{{ asset('assets/css/plugins/footable/footable.core.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/css/plugins/dataTables/datatables.min.css?v=123') }}" rel="stylesheet">
+<link href="{{ asset('assets/css/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css?v=123') }}" rel="stylesheet">
+<link href="{{ asset('assets/css/plugins/bootstrap-toggle/bootstrap-toggle.min.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/css/plugins/select2/select2.min.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/css/plugins/ionRangeSlider/ion.rangeSlider.css')}}" rel="stylesheet">
+<link href="{{ asset('assets/css/plugins/ionRangeSlider/ion.rangeSlider.skinModern.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/css/plugins/jsTree/style.min.css') }}" rel="stylesheet">
+
+@endsection
+
+@section('content')
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="btn-group">
+      <h2 class="webapp-header">Topic Search</h2>
+  </div>
+  <div class="btn-group pull-right">
+      <div class="pull-right webapp-header">
+          <a href="/dashboard" class="btn btn-default">Dashboard</a>
+      </div>
+  </div>
+</div>
+<!--
+search filter
+-->
+<div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+
+        <div class="ibox-title">
+            <a class="collapse-link">
+                <h5>Search Filter <i class="fa fa-chevron-up"></i></h5>
+            </a>
+            <div class="ibox-tools" style="position: static;">
+                <a class="close-link">
+                    <i class="fa fa-times"></i>
+                </a>
+            </div>
+        </div>
+
+          <div class="ibox-content">
+              <div class="row">
+                  <div class="col-md-4 b-r"><h3 class="m-t-none m-b">Categories</h3>
+                    <div class="col-md-6">
+                        <div class="i-checks"><label> <input id="chkCatAll" type="checkbox"> <i></i> All Categories</label></div>
+                        <div class="i-checks"><label> <input id="chkCatDev" type="checkbox"> <i></i> Development</label></div>
+                        <div class="i-checks"><label> <input id="chkCatBus" type="checkbox" value=""> <i></i> Business</label></div>
+                        <div class="i-checks"><label> <input id="chkCatITS" type="checkbox" value=""> <i></i> IT & Software</label></div>
+                        <div class="i-checks"><label> <input id="chkCatOff" type="checkbox" value=""> <i></i> Office Productivity</label></div>
+                        <div class="i-checks"><label> <input id="chkCatPer" type="checkbox" value=""> <i></i> Personal Development</label></div>
+                        <div class="i-checks"><label> <input id="chkCatDes" type="checkbox" value=""> <i></i> Design</label></div>
+                        <div class="i-checks"><label> <input id="chkCatMar" type="checkbox" value=""> <i></i> Marketing</label></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="i-checks"><label> <input id="chkCatLif" type="checkbox" value=""> <i></i> Lifestyle</label></div>
+                        <div class="i-checks"><label> <input id="chkCatPho" type="checkbox" value=""> <i></i> Photography</label></div>
+                        <div class="i-checks"><label> <input id="chkCatHea" type="checkbox" value=""> <i></i> Health & Fitness</label></div>
+                        <div class="i-checks"><label> <input id="chkCatTea" type="checkbox" value=""> <i></i> Teacher Training</label></div>
+                        <div class="i-checks"><label> <input id="chkCatMus" type="checkbox" value=""> <i></i> Music</label></div>
+                        <div class="i-checks"><label> <input id="chkCatAca" type="checkbox" value=""> <i></i> Academics</label></div>
+                        <div class="i-checks"><label> <input id="chkCatLan" type="checkbox" value=""> <i></i> Language</label></div>
+                        <div class="i-checks"><label> <input id="chkCatTes" type="checkbox" value=""> <i></i> Test Prep</label></div>
+                    </div>
+                  </div>
+                  <div class="col-md-8"><h4>Filters</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <div id="ionrange_freeratio"></div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <div id="ionrange_newstudents"></div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <div id="ionrange_courses"></div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <div id="ionrange_ratings"></div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group" id="inputIncludeTags">
+                          <h3 class="m-t-none m-b">Include Keywords</h3>
+                              <div class="col-md-10" style="padding: 0px;">
+                                  <input id="includeTags" class="form-control tagsinput" type="text" placeholder="Include term"/>
+                              </div>
+                              <div class="col-md-2">
+                                <input id="IncKeyRel" type="checkbox" checked data-toggle="toggle" data-on="or" data-off="and" data-onstyle="primary" data-offstyle="warning">
+                              </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group" id="inputExcludeTags">
+                          <h3 class="m-t-none m-b">Exclude Keywords</h3>
+                          <div>
+                            <input id="excludeTags" class="form-control tagsinput" type="text" placeholder="Exclude terms"/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4 b-r"><h3 class="m-t-none m-b">Categories</h3>
+                    <div id="jstree_categories"></div>
+                </div>
+              </div>
+
+          </div>
+      </div>
+    </div>
+</div>
+
+
+<!--
+search results table
+-->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Search Results</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#">Config option 1</a>
+                        </li>
+                        <li><a href="#">Config option 2</a>
+                        </li>
+                    </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="table-responsive">
+                    <table id="topictable" class="footable table table-stripped toggle-arrow-tiny">
+                    <thead>
+                    <tr>
+
+                        <th>Topic</th>
+                        <th>Category</th>
+                        <th>Free Courses</th>
+                        <th>Free Ratio</th>
+                        <th>Courses</th>
+                        <th>Avg Students</th>
+                        <th>Avg New Students</th>
+                        <th>Sum New Students</th>
+                        <th>Avg Reviews</th>
+                        <th>Avg New Reviews</th>
+                        <th>Sum New Reviews</th>
+                        <th>Avg Rating</th>
+                        <th>Trend</th>
+                        <th>Udemy</th>
+                    </tr>
+                    </thead>
+                    <tbody id="topic-info">
+
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            <ul class="pagination pull-right"></ul>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+right plan to see?
+-->
+<div class="secoverlay" hidden>
+    </br></br>
+    <h2 class='md-display-4'>Insight or Compete - Subscription</h2>
+    <a class="caption-link trbg" href="/account" role="button">Upgrade Now</a>
+</div>
+<?php use App\Http\Controllers\MemberController;?>
+<input type="hidden" id="inCurrentPlan" value="{{ MemberController::hasInsight() || MemberController::hasCompete()}}" />
+@endsection
+
+
+@section('scripts')
+<script src="{{ asset('assets/js/plugins/chosen/chosen.jquery.js')}}"></script>
+<script src="{{ asset('assets/js/plugins/datapicker/bootstrap-datepicker.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/nouslider/jquery.nouislider.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/footable/footable.all.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/dataTables/datatables.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/bootstrap-toggle/bootstrap-toggle.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/select2/select2.full.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/sparkline/jquery.sparkline.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/ionRangeSlider/ion.rangeSlider.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/jsTree/jstree.min.js') }}"></script>
+<script src="{{ asset('assets/js/webapp/topicSearch_tour.js?v=123') }}"></script>
+
+<script>
+    var table;
+    var freeFrom, freeTo;
+    var coursesFrom, coursesTo;
+    var studentsFrom, studentsTo;
+    var ratingsFrom, ratingsTo;
+
+    $(document).ready(function(){
+
+      var check = $("#inCurrentPlan").val();
+      if (check == 0) {
+          $(".secoverlay").show();
+      }
+
+      table = $('#topictable').DataTable({
+          "responsive": true,
+          "processing": true,
+          "serverSide": true,
+          "autoWidth": false,
+          "dom": '<"html5buttons"B>itlp',
+          "buttons": [
+                   {extend: 'copy'},
+                   {extend: 'csv'},
+                   {extend: 'excel', title: 'ExampleFile'}
+               ],
+          "ajax": {
+              "url": "{{ route('topicData') }}",
+              "dataType": "json",
+              "type": "POST",
+              //"data": {"_token": "{{ csrf_token() }}"}
+              "data": function(d) {
+                  d._token = "{{ csrf_token() }}";
+                  d.cAll = $('#chkCatAll:checked').is(':checked');
+                  d.cDev = $('#chkCatDev:checked').is(':checked');
+                  d.cBus = $('#chkCatBus:checked').is(':checked');
+                  d.cITS = $('#chkCatITS:checked').is(':checked');
+                  d.cOff = $('#chkCatOff:checked').is(':checked');
+                  d.cPer = $('#chkCatPer:checked').is(':checked');
+                  d.cDes = $('#chkCatDes:checked').is(':checked');
+                  d.cMar = $('#chkCatMar:checked').is(':checked');
+                  d.cLif = $('#chkCatLif:checked').is(':checked');
+                  d.cPho = $('#chkCatPho:checked').is(':checked');
+                  d.cHea = $('#chkCatHea:checked').is(':checked');
+                  d.cTea = $('#chkCatTea:checked').is(':checked');
+                  d.cMus = $('#chkCatMus:checked').is(':checked');
+                  d.cAca = $('#chkCatAca:checked').is(':checked');
+                  d.cLan = $('#chkCatLan:checked').is(':checked');
+                  d.cTes = $('#chkCatTes:checked').is(':checked');
+                  d.IncTags = $('#includeTags').val();
+                  d.IncKeyRel = $('#IncKeyRel').prop('checked');
+                  d.ExcTags = $('#excludeTags').val();
+                  d.minEnrollments = studentsFrom;
+                  d.maxEnrollments = studentsTo;
+                  d.minCourses = coursesFrom;
+                  d.maxCourses = coursesTo;
+                  d.minAvgRating = ratingsFrom;
+                  d.maxAvgRating =ratingsTo;
+                  d.minFree = freeFrom;
+                  d.maxFree = freeTo;
+                  d.catTree = $('#jstree_categories').jstree('get_selected');
+              }
+          },
+          "order": [[7, "desc" ]],
+          "columns": [
+            {"data": "topic"},
+            {"data": "category"},
+            {"data": "free_courses"},
+            {"data": "free_ratio"},
+            {"data": "course_anz"},
+            {
+                "data": "avg_students",
+                "render": function (data, type, row, meta) {
+                   if(type === 'display'){
+                      return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                   } else {
+                      return data;
+                   }
+                }
+            },
+            {
+                "data": "avg_new_students",
+                "render": function (data, type, row, meta) {
+                   if(type === 'display'){
+                      return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                   } else {
+                      return data;
+                   }
+                }
+            },
+            {
+                "data": "sum_new_students",
+                "render": function (data, type, row, meta) {
+                   if(type === 'display'){
+                      return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                   } else {
+                      return data;
+                   }
+                }
+            },
+            {
+                "data": "avg_reviews",
+                "render": function (data, type, row, meta) {
+                   if(type === 'display'){
+                      return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                   } else {
+                      return data;
+                   }
+                }
+            },
+            {
+                "data": "avg_new_reviews",
+                "render": function (data, type, row, meta) {
+                   if(type === 'display'){
+                      return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                   } else {
+                      return data;
+                   }
+                }
+            },
+            {
+                "data": "sum_new_reviews",
+                "render": function (data, type, row, meta) {
+                   if(type === 'display'){
+                      return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                   } else {
+                      return data;
+                   }
+                }
+            },
+            {"data": "avg_rating"},
+            {"data": "ttrend"},
+            {"data": "topic_url"},
+          ],
+          "columnDefs": [{
+              "targets": [13], // column or columns numbers
+              "orderable": false,  // set orderable for selected columns
+          }],
+          "rowCallback": function( row, data ) {
+              //$('td:eq(10)', row).html('<span class="inlinesparkline">' + data + '</span>');
+          },
+          "drawCallback": function (Settings) {
+              $('.inlinesparkline').sparkline('html', {
+                  type: 'line',
+                  minSpotColor: 'red',
+                  maxSpotColor: 'green',
+                  spotColor: false
+              });
+          }
+      });
+
+      $('#topictable th').each(function() {
+        var title = $(this).text();
+        var tooltip = '';
+        switch (title) {
+          case 'Topic': tooltip = 'The topic name.'; break;
+          case 'Category': tooltip = 'The dominant category this topic is assigned to.'; break;
+          case 'Free Courses': tooltip = 'Amount of free courses.'; break;
+          case 'Free Ratio': tooltip = 'Ratio between free and paid courses in percent within all courses.'; break;
+          case 'Courses': tooltip = 'Amount of courses assigned and listed to that topic on Udemy.'; break;
+          case 'Avg Students': tooltip = 'The average amount of enrolled students per course.'; break;
+          case 'Avg New Students': tooltip = 'The average amount of new enrolled students per course within the last 30 days.'; break;
+          case 'Sum New Students': tooltip = 'The sum of all enrollments within the last 30 days.'; break;
+          case 'Avg Reviews': tooltip = 'The average amount of reviews per course.'; break;
+          case 'Avg New Reviews': tooltip = 'The average amount of new reviews per course within the last 30 days.'; break;
+          case 'Sum New Reviews': tooltip = 'The sum of all new reviews within the last 30 days.'; break;
+          case 'Avg Rating': tooltip = 'The average rating for courses in the topic.'; break;
+          case 'Trend': tooltip = 'The trend for this topic over the last 10 weeks in terms of enrollments of its assigned courses. Compare to 5 years google trend in the keyword section to better understand.'; break;
+          case 'Udemy': tooltip = 'External link to topic listing page on Udemy.'; break;
+        }
+
+        this.setAttribute( 'title', tooltip );
+      });
+
+      $('.tagsinput').tagsinput({
+          tagClass: 'label label-primary'
+      });
+
+      $('#read-data').on('click', function(){
+          table.ajax.reload();
+      });
+
+
+      $('#includeTags, #excludeTags, #IncKeyRel, .i-checks').on('change', function(e){
+          table.ajax.reload();
+      });
+
+    });
+
+    function isNumberKey(evt) {
+      var charCode = (evt.which) ? evt.which : evt.keyCode;
+      if (charCode == 13) {
+        table.ajax.reload();
+        return false;
+      }
+
+      if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+      return true;
+    }
+
+    $('.chosen-select').chosen({width: "100%"});
+
+    $("#ionrange_freeratio").ionRangeSlider({
+        min: 1,
+        max: 100,
+        step: 1,
+        type: 'double',
+        prefix: "FreeR: ",
+        maxPostfix: "+",
+        prettify: true,
+        hasGrid: false,
+        force_edges: true,
+        onFinish: function (data) {
+            if (data.max == data.to) {
+                freeTo = null;
+            } else {
+                freeTo = data.to;
+            }
+            freeFrom = data.from;
+            table.ajax.reload();
+        }
+    });
+    $("#ionrange_courses").ionRangeSlider({
+        min: 0,
+        max: 100,
+        step: 1,
+        type: 'double',
+        prefix: "Courses: ",
+        maxPostfix: "+",
+        prettify: true,
+        hasGrid: false,
+        force_edges: true,
+        onFinish: function (data) {
+            if (data.max == data.to) {
+                coursesTo = null;
+            } else {
+                coursesTo = data.to;
+            }
+            coursesFrom = data.from;
+            table.ajax.reload();
+        }
+    });
+    $("#ionrange_newstudents").ionRangeSlider({
+        min: 0,
+        max: 5000,
+        step: 50,
+        type: 'double',
+        prefix: "New Students: ",
+        maxPostfix: "+",
+        prettify: true,
+        hasGrid: false,
+        force_edges: true,
+        onFinish: function (data) {
+            if (data.max == data.to) {
+                studentsTo = null;
+            } else {
+                studentsTo = data.to;
+            }
+            studentsFrom = data.from;
+            table.ajax.reload();
+        }
+    });
+    $("#ionrange_ratings").ionRangeSlider({
+        min: 0,
+        max: 5,
+        step: 0.1,
+        type: 'double',
+        prefix: "Ratings: ",
+        maxPostfix: "+",
+        prettify: true,
+        hasGrid: false,
+        force_edges: true,
+        onFinish: function (data) {
+            if (data.max == data.to) {
+                ratingsTo = null;
+            } else {
+                ratingsTo = data.to;
+            }
+            ratingsFrom = data.from;
+            table.ajax.reload();
+        }
+    });
+
+    $('#jstree_categories').jstree(
+
+      {
+        'open': false,
+        'plugins':["wholerow","checkbox"],
+        'core' : {
+              'data' : [
+                {
+                  "id": "All Categories",
+                  "text" : "All Categories",
+                  "state" : {
+                    "opened" : false,
+                    "selected" : true
+                  } ,
+                  "children" : [
+                    { "id": "Development", "text" : "Development" },
+                    { "id": "Business", "text" : "Business" },
+                    { "id": "IT & Software", "text" : "IT & Software" },
+                    { "id": "Office Productivity", "text" : "Office Productivity" },
+                    { "id": "Personal Development", "text" : "Personal Development" },
+                    { "id": "Design", "text" : "Design" },
+                    { "id": "Marketing", "text" : "Markting" },
+                    { "id": "Lifestyle", "text" : "Lifestyle" },
+                    { "id": "Photography", "text" : "Photography" },
+                    { "id": "Health & Fitness", "text" : "Health & Fitness" },
+                    { "id": "Teacher Training", "text" : "Teacher Training" },
+                    { "id": "Music", "text" : "Music" },
+                    { "id": "Academics", "text" : "Academics" },
+                    { "id": "Language", "text" : "Language" },
+                    { "id": "Test Prep", "text" : "Test Prep" }
+                  ]
+                }
+              ],
+              expand_selected_onload : false
+            }
+      }
+    );
+    $('#jstree_categories').on("changed.jstree", function (e, data) {
+        table.ajax.reload();
+    });
+
+</script>
+
+<script>
+
+</script>
+@endsection

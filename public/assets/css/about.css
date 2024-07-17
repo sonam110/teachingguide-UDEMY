@@ -1,0 +1,285 @@
+/*seprate page css*/
+.seprate-page .navbar-wrapper{
+	position: relative;
+	margin-top: 0;
+	background-color: rgba(0, 180, 142, 0.9);
+}
+.seprate-page .navbar-wrapper .navbar{
+	position: relative;
+	margin-bottom: 0;
+}
+.seprate-page .navbar-wrapper-top{
+	position: fixed;
+	background-color: rgba(0, 180, 142, 0.9);
+}
+/*seprate page css end*/
+
+.our-misson-vision{
+	padding: 40px 0;
+	background: #f7f7f7;
+	
+}
+.about-page #about .navy-line {
+    width: 60px;
+    height: 1px;
+    margin: 60px auto 0;
+    border-bottom: 2px solid #00b48e;
+}
+.about-page .navy-line{
+	margin:20px 0;
+}
+.our-misson-vision h2{
+	font-size: 30px;
+	padding: 5px 0;
+	margin:0;
+	font-weight: 600;
+}
+.our-misson-vision h3{
+	font-size: 18px;
+	padding: 5px 0 2px;
+	margin:0;
+	font-weight: normal;
+}
+.our-misson-vision .common-content{
+	text-align: left;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 1.5;
+}
+.our-misson-vision .our-vision{
+	padding: 15px 2vw;
+	color: white;
+	background-color: rgba(0, 180, 142, 0.9);
+}
+.our-misson-vision .our-vision .vision-content{
+	padding: 15px 0;
+}
+/*our-leader-section*/
+.our-leader-section{
+	padding: 40px 0;
+}
+.our-leader-section .leader-row{
+	padding: 0 0 5vw;
+}
+.our-leader-section .leader-row:last-child{
+	padding: 0 0 15px;
+}
+.our-leader-section .section-title, .our-misson-vision .section-title {
+	padding: 20px 0;
+}
+.our-leader-section .section-title h2{
+	font-size: 30px;
+	padding: 5px 0;
+	margin:0;
+	font-weight: 600;
+}
+.our-leader-section .section-title h3{
+	font-size: 18px;
+	padding: 5px 0 2px;
+	margin:0;
+	font-weight: normal;
+}
+.our-leader-section .leader-img{
+	position: relative;
+}
+.our-leader-section .leader-img:before{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 15px;
+	background-color: rgba(0, 180, 142, 0.9);
+	z-index: -1;
+	top: 15px;
+}
+.our-leader-section .leader-img img{
+	width: 100%;
+	min-width: 350px;
+	max-width: 350px;
+}
+.our-leader-section .leader-content{
+	padding:0 3vw;
+}
+.our-leader-section .leader-content p{
+	font-size: 16px;
+}
+.our-leader-section .left-leader-content{
+	padding: 0 3vw 0 0;
+}
+.our-leader-section .leader-content h4{
+	padding: 10px 0;
+	margin: 0;
+	font-size: 20px;
+}
+/*our-team-section*/
+.our-team-section{
+	padding: 40px 0 60px;
+	background: #f7f7f7;
+}
+.our-team-section .navy-line{
+	margin: 20px auto;
+}
+.our-team-section .section-title{
+	text-align: center;
+	padding: 20px 0 60px;
+}
+.our-team-section .section-title h2{
+	font-size: 30px;
+	font-weight: 600;
+	margin:0;
+	padding: 15px 0 0;
+}
+.our-team-section .section-title h3{
+	font-size: 16px;
+	font-weight: normal;
+	margin:0 auto;
+	max-width: 70%;
+}
+
+/*slider css*/
+.team-slider{
+	overflow-x: hidden;
+	position: relative;
+}
+.about-page .col-centered {
+    float: none;
+    margin: 0 auto;
+}
+.about-page .carousel-control { 
+    width: 8%;
+    width: 0px;
+    display: block;
+}
+.about-page .carousel-control.left,
+.about-page .carousel-control.right { 
+    margin-right: 40px;
+    margin-left: 32px; 
+    background-image: none;
+    opacity: 1;
+}
+.about-page .carousel-control > a > span {
+    color: white;
+	font-size: 29px !important;
+}
+
+.about-page .carousel-col { 
+    position: relative; 
+    min-height: 1px; 
+    padding: 5px; 
+    float: left;
+ }
+
+ .about-page .active > div { display:none; }
+ .about-page .active > div:first-child { display:block; }
+
+/*xs*/
+@media (max-width: 767px) {
+  .about-page .carousel-inner .active.left { left: -100%; }
+  .about-page .carousel-inner .active.right { left: 100%; }
+	.about-page .carousel-inner .next        { left:  100%; }
+	.about-page .carousel-inner .prev		     { left: -100%; }
+  .about-page .carousel-col                { width: 100%; }
+	.about-page .active > div:first-child + div { display:none; }
+}
+
+/*sm*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .carousel-inner .active.left { left: -50%; }
+  .carousel-inner .active.right { left: 50%; }
+	.carousel-inner .next        { left:  50%; }
+	.carousel-inner .prev		     { left: -50%; }
+  .carousel-col                { width: 50%; }
+	.active > div:first-child + div { display:block; }
+}
+
+/*md*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .carousel-inner .active.left { left: -33%; }
+  .carousel-inner .active.right { left: 33%; }
+	.carousel-inner .next        { left:  33%; }
+	.carousel-inner .prev		     { left: -33%; }
+  .carousel-col                { width: 33%; }
+	.active > div:first-child + div { display:block; }
+  .active > div:first-child + div + div { display:block; }
+}
+
+/*lg*/
+@media (min-width: 1200px) {
+  .carousel-inner .active.left { left: -25%; }
+  .carousel-inner .active.right{ left:  25%; }
+	.carousel-inner .next        { left:  25%; }
+	.carousel-inner .prev		     { left: -25%; }
+  .carousel-col                { width: 25%; }
+	.active > div:first-child + div { display:block; }
+  .active > div:first-child + div + div { display:block; }
+	.active > div:first-child + div + div + div { display:block; }
+}
+
+.block {
+	width: 100%;
+	height: auto;
+}
+.block img{
+	max-width: 100%;
+	height: 200px;
+	width: 100%;
+}
+.block-text{
+	padding: 15px;
+	text-align: center;
+	background-color: white;
+}
+.block-text .team-name{
+	font-size: 18px;
+	font-weight: 600;
+}
+.block-text .team-position{
+	font-size: 15px;
+	font-weight: normal;
+}
+.about-page .carousel-inner{
+	overflow:hidden;
+}
+.about-page .carousel .item{
+	background: none;
+}
+/*responsive css*/
+@media (max-width: 1199px){
+	.our-leader-section .leader-img{
+		min-width: 250px;
+		max-width: 250px;
+		width: 100%;
+	}
+	.our-leader-section .leader-img img{
+		min-width: 250px;
+		max-width: 250px;
+	}
+}
+@media (max-width: 991px){
+	.our-leader-section .leader-img{
+		text-align: center;
+		margin: 0 auto 25px;
+	}
+	.our-leader-section .leader-content{
+		padding: 15px 0;
+	}
+	.our-leader-section .left-leader-content{
+		padding: 15px 0;
+	}
+	.our-leader-section .leader-row{
+		padding: 0 0 10px;
+	}
+	.our-mission{
+		padding: 20px;
+		background-color: white;
+	}
+	.our-misson-vision .our-vision{
+		padding: 20px;
+	}
+	.our-leader-section .section-title, .our-misson-vision .section-title {
+		padding: 10px 0;
+	}
+	.our-team-section .section-title h3{
+		max-width: 90%;
+	}
+}

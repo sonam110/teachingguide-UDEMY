@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>teachinGuide | Register</title>
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="assets/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen   animated fadeInDown">
+        <div>
+            <div>
+
+                <h1 class="logo-name">TG</h1>
+
+            </div>
+            <h3>Register to teachinGuide</h3>
+            <p>Where instructors make money.</p>
+
+            <form class="m-t" role="form" method="POST" action="{{ route('register') }}">
+                @csrf
+                <div class="form-group">
+                  <input id="name" placeholder="Name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+
+                  @if ($errors->has('name'))
+                      <span class="invalid-feedback">
+                          <strong>{{ $errors->first('name') }}</strong>
+                      </span>
+                  @endif
+                </div>
+                <div class="form-group">
+                  <input id="email" placeholder="E-Mail" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                  @if ($errors->has('email'))
+                      <span class="invalid-feedback">
+                          <strong>{{ $errors->first('email') }}</strong>
+                      </span>
+                  @endif
+                </div>
+                <div class="form-group">
+                  <input id="password" placeholder="Password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                  @if ($errors->has('password'))
+                      <span class="invalid-feedback">
+                          <strong>{{ $errors->first('password') }}</strong>
+                      </span>
+                  @endif
+                </div>
+                <div class="form-group">
+                  <input id="password-confirm" placeholder="Retype Password" type="password" class="form-control" name="password_confirmation" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary block full-width m-b">{{ __('Register') }}</button>
+
+                <p class="text-muted text-center"><small>Already have an account?</small></p>
+                <a class="btn btn-sm btn-white btn-block" href="{{ route('login')}}">Login</a>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="assets/js/jquery-3.1.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- iCheck -->
+    <script src="assets/js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        });
+    </script>
+</body>
+
+</html>

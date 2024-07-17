@@ -1,0 +1,194 @@
+/*seprate page css*/
+.seprate-page .navbar-wrapper{
+	position: relative;
+	margin-top: 0;
+	background-color: rgba(0, 180, 142, 0.9);
+}
+.seprate-page .navbar-wrapper .navbar{
+	position: relative;
+	margin-bottom: 0;
+}
+.seprate-page .navbar-wrapper-top{
+	position: fixed;
+	background-color: rgba(0, 180, 142, 0.9);
+}
+/*seprate page css end*/
+/*course-database navbar transparent css*/
+.courserDatabase-page .navbar-wrapper{
+	background-color: transparent;
+}
+.courserDatabase-page .hero-section{
+	padding-top: 120px;
+	background-color: rgba(0, 180, 142, 0.9);
+	color: white;
+	padding-bottom: 140px;
+	margin-top: -90px;
+	background: url('../img/2018-05-21-min.png') 50% 0 no-repeat;
+    background-size: auto auto;
+	background-size: cover;
+	position: relative;
+}
+.courserDatabase-page .hero-section:before{
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 180, 142, 0.9);
+	top: 0px;
+	left: 0;
+	right: 0;
+}
+.courserDatabase-page .hero-head{
+	font-size: 38px;
+	font-weight: bold;
+	padding: 0 0 20px;
+	margin:0;
+}
+.courserDatabase-page .hero-sub-head{
+	font-size: 24px;
+	padding: 0;
+	margin:0;
+}
+.courserDatabase-page .hero-btn{
+	display: inline-block;
+	font-size: 24px;
+	padding: 10px 30px;
+	margin:2vw 0;
+	margin-top: 60px;
+	color: rgba(0, 180, 142, 0.9);
+	background-color: white;
+	font-weight: 600;
+	border:1px solid;
+	border-radius: 4px;
+}
+.courserDatabase-page .hero-btn:hover{
+	border:1px solid;
+	color: white;
+	background-color: transparent;
+}
+.hero-below-section{
+	margin-top: -80px;
+	margin-bottom: 40px;
+	position: relative;
+}
+.hero-below-section .container{
+	overflow: initial;
+}
+.hero-below-section .hero-below-content{
+	background-color: white;
+	box-shadow: 0 0 10px #ccc;
+	padding: 40px;
+	max-width: 1000px;
+	margin:0 auto !important;
+	text-align: center;
+}
+.hero-below-section .hero-below-content img{
+	max-width: 100%;
+	min-height: 250px;
+	max-height: 250px;
+}
+.hero-below-section .hero-below-content .hero-below-head{
+	font-size: 30px;
+	line-height: 1;
+	padding: 40px 10px;
+	font-weight: 600;
+	text-align: left;
+}
+.hero-below-section .hero-below-content .hero-below-sub-head{
+	font-size: 18px;
+	padding: 0 10px;
+	text-align: left;
+}
+.benifit-section{
+	padding: 40px 0;
+	background-color: hsl(210, 17%, 98%);
+}
+.benifit-head{
+	text-align: center;
+	font-size: 24px;
+	font-weight: 600;
+	padding: 0 0 40px;
+	margin:0;
+}
+.detail-box-row:nth-child(2n+1){
+	clear: both;
+}
+.detail-box
+{
+	padding: 15px;
+	border: 3px solid rgba(0, 180, 142, 0.9);
+	margin-bottom: 20px;
+	background-color: white;
+}
+.detail-box .benifit-title{
+	font-size: 18px;
+	font-weight: 500;
+	padding: 10px 0;
+}
+.detail-box .benifit-detail{
+	font-size: 14px;
+}
+.detail-box .detail-icon{
+	padding: 15px 15px;
+}
+.detail-box .detail-icon i{
+	font-size: 18px;
+	color: rgba(0, 180, 142, 0.9);
+}
+.courserDatabase-page .navy-line{
+	margin: 20px auto;
+}
+.courserDatabase-page #about .navy-line {
+    width: 60px;
+    height: 1px;
+    margin: 60px auto 0;
+    border-bottom: 2px solid #00b48e;
+}
+/*Responsive css*/
+@media (max-width: 1199px){
+	.courserDatabase-page .hero-video iframe{
+		max-width: 100%;
+	}
+	.courserDatabase-page .hero-head{
+		font-size: 24px;
+	}
+	.courserDatabase-page .hero-sub-head{
+		font-size: 18px;
+	}
+	.courserDatabase-page .hero-btn{
+		font-size: 18px;
+	}
+	.benifit-head{
+		font-size: 18px;
+	}
+	.hero-below-section .hero-below-content .hero-below-head{
+		font-size: 24px;
+	}
+	.hero-below-section .hero-below-content .hero-below-sub-head{
+		font-size: 18px;
+	}
+}
+@media (max-width: 991px){
+	.courserDatabase-page .hero-video{
+		text-align: center;
+	}
+	.courserDatabase-page .hero-section{
+		text-align: center;
+	}
+	.hero-below-section .hero-below-content{
+		padding: 20px;
+	}
+	.benifit-head{
+		padding: 0 0 20px 0;
+	}
+}
+@media (max-width: 767px){
+	.detail-box .detail-icon{
+		padding: 15px 0;
+	}
+}
+@media (max-width: 480px){
+	.hero-below-section .hero-below-content .detail-box-row, .hero-below-content-row{
+		padding: 0;
+	}
+}

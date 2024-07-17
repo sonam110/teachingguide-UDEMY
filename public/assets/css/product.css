@@ -1,0 +1,128 @@
+footer{
+	background-color: #00B48E;
+    color: #ffffff;
+    padding: 15px 0;
+}
+footer .footer_inner{
+	width: 100%;
+}
+.footer_logo img{
+	width: 200px;
+}
+footer .footer_inner p{
+	margin-bottom: 0;
+	margin-top: 15px;
+}
+.product-page .navbar-default{
+	background-color: rgba(0, 180, 142, 0.9);
+}
+.product-page #product{
+	padding-top: 30px;
+	padding-bottom: 60px;
+}
+.product-page #product .product-title{
+	margin-bottom:30px;
+	margin-top: 30px;
+}
+.product-page  .navy-line{
+	margin: 15px auto 0px;
+}
+.product-page .margin-bottom-10{
+	margin-bottom: 10px;
+}
+.product-page .margin-bottom-30{
+	margin-bottom: 30px;
+}
+.product-page .padding-bottom-60{
+	padding-bottom: 60px;
+}
+
+.product-page .margin-top-20{
+	margin-top: 20px;
+}
+
+.product-page #pricing{
+	padding-top: 110px;
+	padding-bottom: 30px;
+}
+.product-page #pricing .pricing-section-title{
+	margin-top: 30px;
+}
+.product-page #pricing .js-btn{
+	outline: none; width: 9em; margin: 0px;border: 0px;
+}
+.product-page #pricing .salesBadge{
+	height: 4em;
+}
+.product-page #pricing .pricing-title{
+	border-top: 0;
+}
+.product-page #pricing .price-table-btns{
+	align-items: center;
+}
+.product-page #pricing .border-1{
+	border: 1px solid #00b48e;
+}
+.product-page #pricing .border-5{
+	border: 5px solid #00b48e;
+}
+.product-page #pricing .border-10{
+	border: 10px solid #00b48e;
+}
+
+.product-page #pricing .navy-line-border-bottm-none{
+	border-bottom: none;
+}
+.product-page #pricing .price-box-main{
+	display: flex;
+	width: 100%;
+	padding: 30px 0 0;
+}
+.product-page #pricing .price-box-main .price-box-inner{
+	flex: 1;
+}
+.product-page #pricing .price-box-main .price-box-inner .pricing-plan{
+	margin: 0 0px;
+	height: 100%;
+	padding: 0 0 12px;
+}
+.product-page #pricing .price-box-main .price-box-inner .pricing-plan li:nth-last-child(2){
+	margin-bottom: 70px;
+}
+.product-page #pricing .bottom-btn{
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	right: 0;
+}
+@media (max-width: 1440px){
+	.product-page #pricing .price-box-main .price-box-inner .pricing-plan{
+		margin: 0 0px;
+	}
+}
+@media (max-width: 1199px){
+	.product-page #pricing .price-box-main{
+		display: block;
+	}
+	.product-page #pricing .price-box-main .price-box-inner .pricing-plan{
+		margin: 0px 0px;
+	}
+	.product-page #pricing .price-box-main .price-box-inner .pricing-plan li:nth-last-child(2){
+		margin-bottom: 10px;
+	}
+	.product-page #pricing .bottom-btn{
+		position: relative;
+		bottom: unset;
+		left: 0;
+		right: 0;
+	}
+}
+@media (max-width: 531px){
+	.product-page #product{
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	.product-page #pricing{
+		padding-top: 30px;
+	}
+}

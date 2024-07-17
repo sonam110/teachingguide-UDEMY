@@ -1,0 +1,63 @@
+.feedback-button {
+  height:50px;
+  width:100px;
+  line-height:32px;
+  -webkit-transform:rotate(-90deg);
+  font-weight:600; color:white;
+  transform:rotate(-90deg);
+  -ms-transform:rotate(-90deg);
+  -moz-transform:rotate(-90deg);
+  text-align:center;
+  font-size:17px;
+  position:fixed;
+  right:-40px;
+  top:75%;
+  font-family: "Roboto", helvetica, arial, sans-serif;
+  z-index:999;
+}
+
+#feedback-main{
+display:none;
+	float:left;
+	padding-top:0px;
+}
+
+#feedback-div {
+	background-color:rgba(72,72,72,0.4);
+	padding-left:35px;
+	padding-right:35px;
+	padding-top:35px;
+	padding-bottom:35px;
+	width: 650px;
+	float: left;
+	left: 0;
+  right:0;
+	position: absolute;
+	margin: 30px auto 0;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+}
+@media only screen and (max-width: 991px){
+  #feedback-div{
+    margin-top: 60px;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+	#feedback-div{
+		width: 88%;
+		padding-left: 3%;
+		padding-right: 3%;
+    margin-top: 50px;
+	}
+}
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+  display: block; /* For Firefox */
+}
+
+/* */
+
+div[contenteditable=true] {
+  padding: 5px;
+}

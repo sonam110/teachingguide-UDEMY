@@ -1,0 +1,261 @@
+/* Tablet Layout: 768px. */
+
+@media only screen and (max-width: 1199px) {
+    .investor_title h1{
+    	font-size: 32px;
+    }
+    .investor_title h4{
+   	    max-width: 600px;
+    	font-size: 14px;
+    }
+    .investor_title {
+	    margin-bottom: 25px;
+	}
+	.left_bk_side_txt h4{
+	    font-size: 20px;
+	}
+	.left_bk_side_txt p{
+		font-size: 14px;
+		line-height: 22px;
+	}
+	.left_bk_side_txt {
+	    /*margin: 60px 0;*/
+	}
+	.left-contact-form .contact-forms h3 {
+	    font-size: 18px;
+	    line-height: 26px;
+	    margin-bottom: 22px;
+	}
+	.background-part{
+		padding: 0;
+	}
+
+}
+
+@media only screen and (max-width: 991px) {
+	.background-part{
+		padding: 30px 0;
+	}
+	.investor_title h1 {
+	    font-size: 28px;
+	}
+	.left-contact-form{
+		margin: 20px 0 0 0;
+	}
+	.freebook{
+		display: block;
+		align-items: center;
+	}
+	.left_bk_side_txt {
+	    margin: 60px 0;
+	}
+	.transparent_box .left_bk_side img {
+	    width: 220px;
+	    margin: 0 auto;
+	}
+}
+
+@media only screen and  (max-width: 767px) {
+	.left_bk_side_txt {
+	    margin: 0;
+	}
+	/*.transparent_box .left_bk_side img {
+	    margin: 0;
+	}*/
+	#contact h3 {
+		color: #000;
+	}
+	.right-parts img{
+		margin: 0 auto;
+	}
+	.left-part img{
+	margin: 0 auto;
+	}
+	.right-content-parts{
+		text-align:center;
+	}
+	.left-part h3{
+	text-align:center;
+	}
+	.right-parts h4{
+		text-align:center;
+	}
+	.right-content-parts{
+	 margin-top: 10px;
+	}
+	.social_icon h4{
+		text-align:center;
+	}
+	.social_icon {
+		text-align:center;
+		margin:0 auto;
+	}
+	.right-parts h3 {
+	    color: #1A1F2C;
+	    font-weight: bold;
+	    margin-top: 27px;
+	    text-align: center;
+	    font-size: 20px;
+	    font-family: 'Open Sans', sans-serif;
+	}
+	.left_socials {
+		text-align:center;
+		margin:0 auto;
+	}
+	.right_social p{
+		text-align:center;
+	}
+	.mine{
+	margin-left:5px;
+	}
+	.left_part img{
+		margin:0 auto;
+	}
+
+	.commons{
+		padding-left:0px;
+		padding-right:0px;
+	}
+	.r_common{
+		padding-right:0px;
+		padding-left:0px;
+	}
+	.background_part_t{
+		background: url(../img/tbg.jpg) no-repeat center center;
+	    background-size: cover;
+		padding-top:4px;
+		padding-bottom:40px;
+		overflow:hidden;
+	}
+	.right_part p{
+	text-align:center;
+	}
+	.flag{
+		text-align:center;
+		margin-top:-7px;
+	}
+
+	.navbar-nav > li {
+	   
+	    margin-top: 4px;
+	}
+	.navbar-collapse.in {
+	    overflow-y: none!important; 
+	}
+	.inner_salexpo h3 {
+	    font-weight: bold;
+	    font-size: 20px;
+		color:#fff;
+		padding-top:6px;
+	}
+	.inner_salexpo h1{
+		font-weight:bold;
+		padding-bottom:5px;
+		padding-top:3px;
+		font-size:25px;
+		color:#fff;
+	}
+	.inner_salexpo h4{
+		font-size:18px;
+		font-family: 'Open Sans', sans-serif;
+		color:#fff;
+	}
+	.instant_access_btn{
+		width:100%;
+		background:#008CFF;
+		font-size:25px;
+		color:#fff;
+		padding:16px 20px;
+		border:none;
+		outline:0;
+		font-family: 'Open Sans', sans-serif;
+		 border-radius: 4px;
+	}
+	.office{
+		font-size:12px;
+	}
+	.middle_menu{
+		text-align:center;
+	}
+
+	.right_contact{
+		text-align:center;
+		
+	}
+
+	.left_bk_side_t h1{
+		font-size:30px;
+		font-weight:800;
+	}
+
+	.left_bk_side_t p{
+		font-size:17px;
+		font-family: 'Open Sans', sans-serif;
+	}
+
+	.left_bk_side_t{
+		margin-top:10px;
+	}
+
+	.transparent_box{
+		margin-top:2px;
+	}
+
+	.left_bk_side h1{
+		font-size:30px;
+		line-height:37px;
+		text-align:center;
+	}
+
+	.left_bk_side h4{
+		font-size:22px;
+		text-align:center;
+	}
+
+	.left_bk_side p{
+	text-align:center;
+	}
+
+	.left_contents_part p {
+	    font-size: 25px;
+	    font-family: 'Open Sans', sans-serif;
+	    margin-top: 30px;
+	    line-height: 43px;
+	}
+
+	.investor_title h1 {
+	    font-size: 24px;
+	    line-height: 38px;
+	}
+	.investor_title {
+	    margin-bottom: 0;
+	}
+
+	.investor_title h4 {
+	    max-width: none;
+	    font-size: 14px;
+	    line-height: 24px;
+	}
+
+	.inner_header p{
+		font-size:30px;
+	}
+
+	.background-part {
+	    padding: 30px 15px;
+	    background-image: none;
+        background: #00b48e;
+	}
+
+	#contact h3 {
+	    color: #000;
+	    display: block;
+	}
+}
+
+
+@media only screen and  (max-width: 480px) {
+	.transparent_box .left_bk_side img {
+	    width: 200px;
+	}
+}

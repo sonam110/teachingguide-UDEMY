@@ -1,0 +1,188 @@
+.carousel-caption {
+  position: absolute;
+  top: 150px;
+  left: 4%;
+  bottom: auto;
+  right: 4%;
+  text-align: center;
+}
+.onee {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 180, 142, 0.9);
+  z-index: 1;
+  position: absolute;
+  margin-top: -470px;
+}
+@media (max-width: 767px){
+  .onee {
+      margin-top: -560px;
+    }
+    .landing-page .navbar-default .navbar-collapse {
+      background-color: white;
+    }
+     .landing-page .price-table-btns .js-btn{
+      margin-top: 10px !important;
+     }
+}
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+/* Styles */
+    .onee {
+      margin-top: -560px;
+    }
+
+    .onee2 {
+      margin-top: -600px;
+    }
+}
+.onee2 {
+  height: 80px;
+  width: 100%;
+  background-color: rgba(0, 180, 142, 0.9);
+  z-index: 1;
+  position: absolute;
+  margin-top: 0px;
+}
+
+
+#starter, #insights, #compete {
+  display:none
+}
+.features a.navy-link, .services a.navy-link {
+  color:#ffffff;
+}
+.trbg {
+  background-color:#ffffff !important;
+  border:1px solid #ffffff !important;
+  color:#00b48e !important;
+}
+.trbg:hover {
+  background-color:transparent !important;
+  border:1px solid #ffffff !important;
+  color:#ffffff !important;
+  transition: all 0.2s;
+}
+.whitebg {
+  background-color:transparent !important;
+  border:1px solid #ffffff !important;
+}
+.whitebg:hover {
+  background-color:#ffffff !important;
+  border:1px solid #ffffff !important;
+  color:#00b48e !important;
+  transition: all 0.2s;
+}
+#monthly{
+padding: 6px;
+margin-left: -6px;
+font-size:22px;
+color:#ffffff;
+cursor:pointer;
+font-weight:bold;
+}
+#yearly{
+padding: 6px;
+    margin-left: 10px;
+    margin-right: -6px;
+font-size:22px;
+color:#ffffff;
+cursor:pointer;
+font-weight:bold;
+}
+.mnth{
+    background: #fff;
+
+    border-radius: 4px;
+color: #00b48e !important;
+    transition: all 0.3s;
+font-weight:bold;
+
+    }
+.yerl{
+    background: #fff;
+    border-radius: 4px;
+color: #00b48e !important;
+    transition: all 0.3s;
+font-weight:bold;
+
+}
+.ycost{
+  display:none;
+font-size:27px;
+}
+.mcost{
+font-size:27px;
+}
+/*mcost*/
+
+.price-table-btns {
+    text-align: center;
+margin-bottom:30px;
+}
+.price-table-btns a:first-child {
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+.price-table-btns a:last-child {
+    margin-left: -1.9px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+.price-table-btns a {
+    line-height: 23px;
+    box-shadow: none !important;
+}
+.js-btn.active{
+    background-color: rgba(0, 180, 142, 0.09) !important;
+    border: 1.5px solid #00BF90!important;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.15)!important;
+    transition: all .3s!important;
+    color: #00BF90!important;
+}
+.js-btn{
+    height: 60px!important;
+    line-height: 16px!important;
+    border-radius: 4px!important;
+    border: 1.5px solid #00BF90!important;
+    font-size: 16px!important;
+    font-weight: 500!important;
+    letter-spacing: -.2px!important;
+    text-align: center!important;
+    color: #00BF90!important;
+    padding: 10px 15px!important;
+    display: inline-block!important;
+    cursor: pointer!important;
+    transition: all .3s!important;
+    white-space: nowrap!important;
+    text-shadow: none!important;
+    outline: 0!important;
+    background-color: #fff!important;
+}
+#tabbedfeatureicons ul{margin-top:25%;}
+#tabbedfeatureicons ul li:last-child{
+background-image:none;
+}
+#tabbedfeatureicons ul li{
+list-style:none;
+display:inline-block;
+background-image:url('../img/dashborder.png');
+background-position: center center;
+background-repeat: repeat-x;
+padding-right: 45px;
+}
+#tabbedfeatureicons ul li *{font-size:40px;}
+#tabbedfeatureicons ul li i{
+background: #E5E4E4;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.activefeat{
+    background: #00b48e !important;
+    color: #fff !important;
+}

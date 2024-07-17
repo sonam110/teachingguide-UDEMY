@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css?family=Arimo|Roboto");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300");
+.affiliate-link {
+    background-color: #1c84c6;
+    border-color: #1c84c6;
+}
+.payment-card {
+  grid-area: card;
+  height: 170px;
+  min-width: 0;
+  min-height: 0;
+  color: #fff;
+  background: linear-gradient(to right, #11a04d 10%, #00c452 50%, #11a04d 90%);
+  margin-top: 15px;
+  border-radius: 8px;
+  justify-self: right;
+  align-self: start;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template: repeat(4, 1fr)/19px repeat(4, 1fr) 19px;
+  grid-template-areas: ". . . visa visa ."
+ ". chip . visa visa . "
+ ". no no no no ."
+ ". name name name year .";
+ font-family: "Roboto", sans-serif;
+}
+
+.payment-card .creditCatd > * {
+  overflow: hidden;
+}
+
+.payment-card .visaLogo {
+  grid-area: visa;
+  overflow: hidden;
+  justify-self: right;
+  font-size: 20px;
+  text-transform: uppercase;
+  height: 90px;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+}
+
+.payment-card .chipLogo {
+  grid-area: chip;
+  overflow: hidden;
+  width: 38px;
+  height: 35px;
+  justify-self: left;
+  margin-top: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+.payment-card ul {
+  grid-area: no;
+  list-style-type: none;
+  justify-self: stretch;
+  display: grid;
+  grid-template: 1fr/repeat(1, 1fr);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.payment-card ul li {
+  display: inline-block;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+  word-spacing: 3.7px;
+}
+
+.payment-card .name {
+  grid-area: name;
+  justify-self: left;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 12.8px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  padding-bottom: 5px;
+  font-weight: 300;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+}
+
+.payment-card .year {
+  grid-area: year;
+  justify-self: right;
+  font-size: 14px;
+  font-weight: lighter;
+  font-family: "Roboto Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  padding-bottom: 5px;
+  font-weight: 300;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+}
+.top-mar{
+  margin-top: 21px;
+}
+.payment .selection {
+  margin-bottom: 1em;
+}
+
+.payment .selection label {
+  display: inline-block;
+  width: 100%;
+  background-color: #18ba98;
+  border-radius: 0px;
+  color: #ffffff;
+  padding: 0.5em;
+  cursor: pointer;
+  text-align: center;
+}
+
+.payment .selection label:hover {
+  background-color: #0c9e80;
+}
+
+.payment .selection input[type=radio] {
+  display: none;
+}
+
+.payment .selection input[type=radio]:checked ~ label {
+  background-color: #f1592a;
+}
+
+.payment .selection input[type=radio] + label:before {
+  font-family: FontAwesome;
+  display: inline-block;
+}
+
+.payment .selection input[type=radio]:checked + label:before { 
+  content: "\f00c"; 
+}
+.payment .selection input[type=radio]:checked + label:before { 
+  letter-spacing: 5px; 
+}
